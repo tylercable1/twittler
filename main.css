@@ -1,0 +1,201 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+ ========
+ Custom styles
+*/
+body {
+	background: #b9bfbe;
+	font: 300 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+} 
+
+
+/*
+  ============
+  Grid
+  ============
+*/
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.container,
+.grid {
+	margin: 0 auto;
+	width: 960px;
+}
+
+.container {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.grid,
+.col-1-4,
+.col-2-4 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.col-1-4,
+.col-2-4 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.col-1-4 {
+	width: 25%;
+}
+
+.col-2-4 {
+	width: 50%;
+}
+
+/*
+  ============
+  Clearfix
+  ============
+*/
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}  
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	clear: both;
+	*zoom: 1;
+}
+
+/*
+  ============
+  Rows
+*/
+
+.row,
+.row-alt {
+	min-width: 960px;
+}
+.row {
+	padding: 66px 0 44px 0;
+}  
+.row-alt {
+	padding: 44px 0 22px 0;
+}
+
+
+
+/*
+  =========
+  Primary header
+  =========
+*/
+
+h1 {
+
+    font-size: 72px;
+    font-weight: 100;
+    letter-spacing: .5px;
+    line-height: 44px;
+    padding: 40px 0 50px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #62A9E0;
+}  
+a {
+	color: #62A9E0;
+}
+a:hover {
+	color: #D81159;
+}
+.username {
+	color: #8F2D56;
+}
+.username:hover {
+	color: #62A9E0;
+	cursor: pointer;
+}
+
+.button {
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid #62A9E0;
+	padding: 5px;
+	display: inline-block;
+	font-weight: 400;
+	letter-spacing: .5px;
+	margin: 0;
+	text-transform: uppercase;
+}  
+
+.tweet-container {
+    display: inline-block;
+	text-align: left;
+	padding: 10px 0 25px 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+.main {
+	text-align: center;
+}

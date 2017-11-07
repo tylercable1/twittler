@@ -1,27 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+  	<meta charset="utf-8">
+  	<title>Twittler</title>
+  	<link rel="stylesheet" href="main.css">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
   </head>
   <body>
+    <header>
+      <h1>
+        <a href="index.html">Twittler</a>
+      </h1>
+    </header>
+
+    <section class="main">
+      <h2>
+        <a class="button" >Show More Tweets</a>
+      </h2>
+
+      <section class="tweet-container">
+      </section>
+      
+      <section class="individual-tweet-container">
+      </section>
+
+    </section>
+
+
     <script>
+    
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
 
+
+
+      //   $body.html('');
+
+      $(document).ready(function() {
+
+        $('.button').on('click', addTweets);
+
+
+        var $body = $('.tweet-container');
         var index = streams.home.length - 1;
-        while(index >= 0){
+        while(index >= 0) {
           var tweet = streams.home[index];
+          var username = tweet.user;
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.html('@' + "<span class='username'>" + username + "</span>" + ': ' + tweet.message + ' ' + tweet.created_at);
           $tweet.appendTo($body);
           index -= 1;
         }
 
+        $('body').on('click', '.username', function() {
+          var user = $(this).text();
+          var name = streams.users[user];
+          for (var i = 0; i < name.length; i++) {
+          	var $tweet = $('<div></div>');
+          	$tweet.html('@' + "<span class='username'>" + user + "</span>" + ': ' + name[i].message + ' ' + tweet.created_at);
+          	$('.tweet-container').slideUp();
+          	$('.individual-tweet-container').slideDown();
+          	$tweet.prependTo($('.individual-tweet-container'));
+          	$('.button').hide();
+          }
+        });
       });
 
+        var addTweets = function(){
+        var $body = $('.tweet-container');
+
+        var j = streams.home.length - 1;
+        while(j >= 0){
+          var tweet = streams.home[j];
+          var username = tweet.user;
+          var $tweet = $('<div></div>');
+          $tweet.html('@' + "<span class='username'>" + username + "</span>" + ': ' + tweet.message + ' ' + tweet.created_at);
+          $tweet.prependTo($body);
+          index -= 1;
+        }
+    }
+
     </script>
+
+
   </body>
 </html>
